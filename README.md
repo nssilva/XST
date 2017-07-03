@@ -28,7 +28,7 @@ THE SOFTWARE.
 ---
 
 ## Quick manual
-```
+```javascript
 winScreen(width, height, fullscreen)
 opens a canvas with the width, height and in fullscreen = true or false
 
