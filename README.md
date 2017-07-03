@@ -1,12 +1,41 @@
-# XST
-simple library for 2d game canvas
+# XST3 simple library for 2d game canvas
+
+**Version 0.3**
+---
+
+## License and copyright
+
+Copyright (c) 2017 Nelson Silva
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+---
+
+## Quick manual
 
 winScreen(width, height, fullscreen)
-opens a canvas with the width, height and in fullscreen = 1 or 0
+opens a canvas with the width, height and in fullscreen = true or false
 
 example:
-	winScreen(640, 480, 0)
-if no width or height provided,
+	winScreen(640, 480, false, 'title');
+    
+    if no width or height provided,
 	winScreen()-> the default would be 640 to 480 no fullscreen. 
 
 setFont(size, name)
@@ -19,9 +48,9 @@ example:
 	setFont(28, 'Algerian')
 	var font = getFont();
 
-function main() {}
-	this function must be allways present at the code even if not used, in case of a loop use the code inside this function.
+This is the main loop function, if you need to repeat the code you must use the main function
 
+function main() {}
 example:
 	function main() {
 		drawtext("mouse X: "+ getmousex, 10, 20);

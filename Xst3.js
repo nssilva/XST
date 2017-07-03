@@ -432,10 +432,9 @@ function onMouseDown(e) {
 }
 
 function getMouseButton() {
-    if(XST.MB === 0) {
-        return 'LMB';
-    } else if(XST.MB === 2) {
-        return 'RMB';
+    var mb = {0: 'LMB', 1: 'WHL', 2: 'RMB'};
+    if(XST.MB) {
+        return mb[XST.MB];
     }
     return false;
 }
