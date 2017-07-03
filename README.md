@@ -28,7 +28,7 @@ THE SOFTWARE.
 ---
 
 ## Quick manual
-
+```
 winScreen(width, height, fullscreen)
 opens a canvas with the width, height and in fullscreen = true or false
 
@@ -43,7 +43,7 @@ sets a font to the size and name given
 
 getFont()
 gets the font
-
+```
 example:
 	setFont(28, 'Algerian')
 	var font = getFont();
