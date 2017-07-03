@@ -209,7 +209,7 @@ XST = {
             var text_console = document.getElementById('text_console');
             text_console.value += text + String.fromCharCode(13, 10);
     },
-    print: function(text) {
+    PRINT: function(text) {
         console.log(text);
     },
     DOM: { 
@@ -394,12 +394,11 @@ function initEvents() {
     XST.canvas.addEventListener('click', onClick, false);
     XST.canvas.addEventListener('mousemove', onMouseMove, false);
     XST.canvas.addEventListener('mousedown', onMouseDown, false);
+    document.addEventListener("contextmenu", function(e) {e.preventDefault();}, false);
     XST.canvas.addEventListener('mouseup', onMouseUp, false);
     XST.canvas.addEventListener('touchstart', onTouchStart, false);
     XST.canvas.addEventListener('touchmove', onTouchMove, false);
-    if (XST.fullScreen) {
-        window.addEventListener('resize', resizeCanvas, false);
-    }
+    if (XST.fullScreen) {window.addEventListener('resize', resizeCanvas, false);}
     initKeys();
 }
 
@@ -427,8 +426,18 @@ function onMouseDown(e) {
     var rect = XST.canvas.getBoundingClientRect();
     XST.mouseX = e.clientX-rect.left;
     XST.mouseY = e.clientY-rect.top;
+    XST.MB = e.button;
     rect = null;
     XST.mouseClick = true;
+}
+
+function getMouseButton() {
+    if(XST.MB === 0) {
+        return 'LMB';
+    } else if(XST.MB === 2) {
+        return 'RMB';
+    }
+    return false;
 }
 
 function onMouseUp(e) {
@@ -437,6 +446,7 @@ function onMouseUp(e) {
     var rect = XST.canvas.getBoundingClientRect();
     XST.mouseX = e.clientX-rect.left;
     XST.mouseY = e.clientY-rect.top;
+    XST.MB = undefined;
     rect = null;
     XST.mouseClick = false;
 }
@@ -519,6 +529,15 @@ function getMouseX() {
 
 function getMouseY() {
     return XST.mouseY || 0;
+}
+
+function getMouseState() {
+    return {
+        x  : getMouseX(),
+        y  : getMouseY(),
+        LMB: XST.MB === 0 ? true: false,
+        RMB: XST.MB === 2 ? true: false
+    }
 }
 
 function clear(color) {
@@ -1539,7 +1558,7 @@ function Point(x, y) {
 /*console.log text for debugging*/
 //this one logs into console.log from browser
 function print(text) {
-    XST.print(text);
+    XST.PRINT(text);
 }
 //this logs into a textarea
 /*function log(text) {
@@ -1653,3 +1672,59 @@ function close() {
     COLOR = null;
 };
 window.onclose = function() {close();} 
+//http://tutorials.jenkov.com/html5-canvas/pixels.html
+//http://beej.us/blog/
+//http://blog.renatolouro.com.br/2011/01/canvas-manipulacao-pixel-a-pixel-pixel-based-em-javascript/
+//http://www.standardabweichung.de/code/javascript/html5-canvas-pixel-manipulation
+//http://csl.sublevel3.org/post/mandelbrot-rendering/
+//http://blog.niklasknaack.de/2016/01/html5-tutorial-canvas-pixel-manipulation.html
+//http://www.lostdecadegames.com/understanding-canvas-rotation/
+//http://www.williammalone.com/articles/create-html5-canvas-javascript-drawing-app/
+//https://javascript30.com/
+//https://billmill.org/static/canvastutorial/paddle.html
+//http://www.somethinghitme.com/
+//https://elegantcode.com/2010/11/12/basic-javascript-part-2-objects/
+//http://phrogz.net/js/classes/OOPinJS2.html
+//http://www.pmob.co.uk/temp/3colfixedtest_explained.htm
+//http://aaditmshah.github.io/why-prototypal-inheritance-matters/#constructors_vs_prototypes
+//http://dmitrysoshnikov.com/ecmascript/javascript-the-core/
+//https://github.com/kamranahmedse/developer-roadmap
+//http://manuel.kiessling.net/2012/03/23/object-orientation-and-inheritance-in-javascript-a-comprehensive-explanation/
+//https://dzone.com/articles/javascript-inheritance-example
+//http://keithclark.co.uk/articles/creating-3d-worlds-with-html-and-css/
+//https://madebymike.com.au/
+//http://rectangleworld.com/blog/archives/298
+//https://dev.opera.com/articles/3d-games-with-canvas-and-raycasting-part-1/
+//https://joshondesign.com/p/books/canvasdeepdive/chapter01.html
+//http://donkcowan.com/blog/2013/3/30/creating-a-3d-effect-in-2d-html5-canvas-games
+//http://codentronix.com/2011/07/22/html5-canvas-3d-starfield/
+//http://kyleschaeffer.com/development/making-canvas-games/
+//https://codepen.io/rachsmith/post/hack-physics-and-javascript-1
+//http://chimera.labs.oreilly.com/books/1234000001654/ch04.html#creating_an_animation_frame_counter
+//http://www.angrycoding.com/
+//https://qfox.nl/weblog/231
+//http://codepen.io/towc/#
+
+
+//to see asap
+//http://hyperphysics.phy-astr.gsu.edu/hbase/hframe.html
+//http://synergyseeker.com/category/learning/
+
+//https://code.tutsplus.com/tutorials/html5-canvas-optimization-a-practical-example--active-11893
+//http://www.benknowscode.com/2012/10/html-canvas-imagedata-creating-layers_9883.html
+//https://simonsarris.com/making-html5-canvas-useful/
+//https://www.ibm.com/developerworks/library/wa-games/
+
+//for c
+//http://www.evanmiller.org/type-punning-functions-in-c.html
+//https://hackernoon.com/javascript-promises-for-animation-sequences-e31873493d49
+
+/*http://www.creativebloq.com/html5/build-tile-based-html5-game-31410992*/
+/*http://jsiso.com/tutorials/isometric-engine-basics.html*/
+/*http://www.emanueleferonato.com/2014/01/17/creation-of-an-html5-tile-based-platform-game-with-no-engines-behind-pure-code/*/
+
+//pixels
+//https://codepo8.github.io/canvas-images-and-pixels/
+
+//images on canvas
+//http://davetayls.me/blog/2013/02/11/drawing-sprites-with-canvas
