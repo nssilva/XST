@@ -70,7 +70,7 @@ Example:
 	}
 ```
 
-Writes text to the screen at a gifven x and y coords.
+Writes text to the screen at a given x and y coords.
 
 Example:
 ```javascript
@@ -78,14 +78,13 @@ Example:
 ```
 
 Clears the screen, most used in main loop.
->(color is only used when we need alpha or something else like changing background color...)
+(color is only used when we need alpha or something else like changing background color...)
 
 Example:
 ```javascript
     clear();
     clear(rgb(255,255,255));
 ```
-
 
 circle(x, y, radius, bordercolor);
 buils a circle in x, y with a radius and a border color 
@@ -107,13 +106,13 @@ setColor(color)->in rgb() format
 setBackColor(rgb(0,0,0)) -> sets the backcolor of canvas
 loadTexture(path)->path to image
 
->Example:
+Example:
 ```javascript	
     var player = loadTexture("images/player.png");
 ```
 > drawTexture draws an image in the screen at given coords.
 
->example:
+example:
 ```javascript
     drawTexture(player, 100, 200);
 ```
@@ -123,7 +122,7 @@ getMouseY()
 getMouseButton()
 getMouseState()
 
-example:
+Example:
     var mouse = getMouseState();
     mouse.x, mouse.y, mouse.RMB, mouse.LMB
 
@@ -134,36 +133,34 @@ getScreenHeight()
 getScreenWidth()
 Entitie(type, image, x, y)
 
-> How to use entities.
-> Example of a player like above but registered as entitie.
+How to use entities.
+Example of a player like above but registered as entitie.
 
-example:
+Example:
 	var player = new Entitie('player', 'images/player.png', 100, 100);
 	var enemie = new Entitie('enemie', 'images/enemoie.png', 0, 0)
 
 drawTexture(player.image, player.x, player.y)
 
-> keys: (MOST IMPORTANT)
+#### keys: **(MOST IMPORTANT)**
 
----
-
-	* BACKSPACE
-    * TAB
-    * ENTER
-    * PAUSE
-    * CAPS
-    * ESC
-    * K_SPACE
-    * PAGE_UP
-    * PAGE_DOWN
-    * END
-    * HOME
-    * K_LEFT
-    * K_UP
-    * K_RIGHT
-    * K_DOWN
-    * INSERT
-    * DELETE
+* BACKSPACE
+* TAB
+* ENTER
+* PAUSE
+* CAPS
+* ESC
+* K_SPACE
+* PAGE_UP
+* PAGE_DOWN
+* END
+* HOME
+* K_LEFT
+* K_UP
+* K_RIGHT
+* K_DOWN
+* INSERT
+* DELETE
 
 ##### String functions
 ```javascript
