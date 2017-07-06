@@ -121,8 +121,8 @@ loadTexture(path)->path to image
 getMouseX()
 getMouseY()
 getMouseButton()
+getMouseState()
 
-getMouseState() 
 example:
     var mouse = getMouseState();
     mouse.x, mouse.y, mouse.RMB, mouse.LMB
@@ -143,26 +143,29 @@ example:
 
 drawTexture(player.image, player.x, player.y)
 
-keys: (MOST IMPORTANT)
-	BACKSPACE
-     TAB
-     ENTER
-     PAUSE
-     CAPS
-     ESC
-     SPACE
-     PAGE_UP
-     PAGE_DOWN
-     END
-     HOME
-     LEFT_ARROW
-     UP_ARROW
-     RIGHT_ARROW
-     DOWN_ARROW
-     INSERT
-     DELETE
+> keys: (MOST IMPORTANT)
 
-> String functions
+---
+
+	* BACKSPACE
+    * TAB
+    * ENTER
+    * PAUSE
+    * CAPS
+    * ESC
+    * K_SPACE
+    * PAGE_UP
+    * PAGE_DOWN
+    * END
+    * HOME
+    * K_LEFT
+    * K_UP
+    * K_RIGHT
+    * K_DOWN
+    * INSERT
+    * DELETE
+
+##### String functions
 ```javascript
 left$(text, num)
 len$(params)
@@ -171,7 +174,7 @@ right$(text, num)
 trim$()
 ```
 
-> Math functions
+##### Math functions
 ```javascript
 abs(params)   
 acos(params)  
