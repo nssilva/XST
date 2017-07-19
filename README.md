@@ -193,7 +193,7 @@ bin2dec(bin)
 ```
 ---
 ## Screens
-![Fern](http://sdlbasic.epizy.com/site/fern.png)
+![Fern](https://github.com/nssilva/XST/blob/master/fern.png)
 
 ---
 #### *To see some examples and demos check this blog.*
