@@ -198,34 +198,33 @@ bin2dec(bin)
 
 ## Code for the julia
 ```javascript
-    winScreen(640, 480, false);
-setTitle('Julia Set');
-var zoom = 1;
-var moveX = 0;
-var moveY = 0;
-var maxIterations = 300;
+	winScreen(640, 480, false);
+	setTitle('Julia Set');
+	var zoom = 1;
+	var moveX = 0;
+	var moveY = 0;
+	var maxIterations = 300;
 
-var cRe = -0.7;
-var cIm = 0.27015;
-var H = getScreenHeight();
-var W = getScreenWidth();
+	var cRe = -0.7;
+	var cIm = 0.27015;
+	var H = getScreenHeight();
+	var W = getScreenWidth();
 
-for (var y = 0; y < H; y++) {
-    for (var x = 0; x < W; x++) {
-        var newRe = 1.5 * (x - W / 2) / (0.5 * zoom * W) + moveX
-        var newIm = (y - H / 2) / (0.5 * zoom * H) + moveY
-        for (var i = 0; i < maxIterations; i++) {
-            var oldRe = newRe;
-            var oldIm = newIm;
-            newRe = (oldRe * oldRe) - (oldIm * oldIm) + cRe;
-            newIm = (2 * oldRe * oldIm) + cIm;
-            if (((newRe * newRe) + (newIm * newIm)) > 4) { break; }
-        }
-        //var col = HSVtoRGB(new ColorHSV(i % 256, 255, 255 * (i < maxIterations)));
-        var col = setHSVToRGB(setColorHSV(i % 256, 255, 255 * (i < maxIterations)));
-        drawPixel(x, y, rgb(col.r, col.g, col.b));
-    }
-}
+	for (var y = 0; y < H; y++) {
+	    for (var x = 0; x < W; x++) {
+		var newRe = 1.5 * (x - W / 2) / (0.5 * zoom * W) + moveX
+		var newIm = (y - H / 2) / (0.5 * zoom * H) + moveY
+		for (var i = 0; i < maxIterations; i++) {
+		    var oldRe = newRe;
+		    var oldIm = newIm;
+		    newRe = (oldRe * oldRe) - (oldIm * oldIm) + cRe;
+		    newIm = (2 * oldRe * oldIm) + cIm;
+		    if (((newRe * newRe) + (newIm * newIm)) > 4) { break; }
+		}
+		var col = setHSVToRGB(setColorHSV(i % 256, 255, 255 * (i < maxIterations)));
+		drawPixel(x, y, rgb(col.r, col.g, col.b));
+	    }
+	}
 ```
 
 ---
