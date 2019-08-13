@@ -1670,4 +1670,4 @@ function close() {
     XST = null;
     COLOR = null;
 };
-window.onclose = function() {close();} 
+window.onclose = function() {close();}
