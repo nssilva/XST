@@ -194,6 +194,7 @@ bin2dec(bin)
 ---
 ## Screens
 ![Fern](https://github.com/nssilva/XST/blob/master/fern.png)
+![Julia](https://github.com/nssilva/XST/blob/master/julia.png)
 
 ---
 #### *To see some examples and demos check this blog.*
