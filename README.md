@@ -194,8 +194,9 @@ bin2dec(bin)
 ---
 ## Screens
 ![Fern](https://github.com/nssilva/XST/blob/master/fern.png)
+![Julia](https://github.com/nssilva/XST/blob/master/julia.png)
 
-##code for the julia
+## Code for the julia
 ```javascript
     winScreen(640, 480, false);
 setTitle('Julia Set');
@@ -226,7 +227,6 @@ for (var y = 0; y < H; y++) {
     }
 }
 ```
-![Julia](https://github.com/nssilva/XST/blob/master/julia.png)
 
 ---
 #### *To see some examples and demos check this blog.*
