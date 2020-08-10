@@ -420,7 +420,7 @@ class XST {
             navy: '#000080',
             gray: '#808080',
             silver: '#C0C0C0',
-            gold: 'gold',
+            gold: '#D4AF37',
             aliceblue: '#f0f8ff',
             antiquewhite: '#faebd7',
             aquamarine: '#7fffd4',
