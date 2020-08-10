@@ -82,7 +82,7 @@ XST = {
         NAVY: '#000080',
         GRAY: '#808080',
         SILVER: '#C0C0C0',
-        GOLD: 'gold'
+        GOLD: '#D4AF37'
     },
     font: {
         type :"30px Arial",
