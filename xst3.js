@@ -1902,28 +1902,28 @@ function getTime() {
     return hour + ':' + min + ':' + secs;
 }
 
-function getHour() {
+/*function getHour() {
     return new Date().getHours();
-}
-/*const getHour = () => new Date().getHours();*/
-function getMinutes() {
+}*/
+const getHour = () => new Date().getHours();
+/*function getMinutes() {
     return new Date().getMinutes();
-}
-/*const getMinutes = () => new Date().getMinutes();*/
-function getSeconds() {
+}*/
+const getMinutes = () => new Date().getMinutes();
+/*function getSeconds() {
     return new Date().getSeconds();
-}
-/*const getSeconds = ()=>new Date().getSeconds();*/
-function ticks() {
+}*/
+const getSeconds = () => new Date().getSeconds();
+/*function ticks() {
     return timeStamp();
-}
-/*let ticks () => timeStamp();*/
-function wait(nsec) {
+}*/
+const ticks = () => timeStamp();
+/*function wait(nsec) {
     setTimeout(dummy, nsec);
-}
-/*let wait = (nsec) => setTimeout(nsec); */
-function dummy() {}
-/*let dummy = () => { };*/
+}*/
+let wait = (nsec) => setTimeout(nsec);
+/*function dummy() {}*/
+const dummy = () => { };
 /*End of time functions*/
 /*
  * @simple vector object
