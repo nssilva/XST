@@ -1692,18 +1692,9 @@ function atan2(par1, par2) {
     return Math.atan2(par1, par2);
 }
 
-function cos(params) {
-    return Math.cos(params);
-}
-/*const cos = (param) => Math.cos(param);*/
-function exp(params) {
-    return Math.exp(params);
-}
-/*const exp = (param) => Math.exp(param);*/
-function log(params) {
-    return Math.log(params);
-}
-/*const log = (param) => Math.log(param);*/
+const cos = (param) => Math.cos(param);
+const exp = (param) => Math.exp(param);
+const log = (param) => Math.log(param);
 function rnd(params) {
     if (params) {
         return Math.random() * params;
@@ -1711,27 +1702,12 @@ function rnd(params) {
     return Math.random();
 }
 
-function round(params) {
-    return Math.round(params);
-}
-/*const round = (param) => Math.round(param);*/
-function sin(params) {
-    return Math.sin(params);
-}
-/*const sin = (param) => Math.sin(param);*/
-function sqrt(params) {
-    return Math.sqrt(params);
-}
-/*const sqrt = (param) => Math.sqrt(param);*/
-function tan(params) {
-    return Math.tan(params);
-}
-/*const tan = (param) => Math.tan(param);*/
+const round = (param) => Math.round(param);
+const sin = (param) => Math.sin(param);
+const sqrt = (param) => Math.sqrt(param);
+const tan = (param) => Math.tan(param);
 //function int(params)   { return ~~params; }
-function int(params) {
-    return round(params);
-}
-/*const int = (param) => round(param);*/
+const int = (param) => round(param);
 function val(params) {
     return params - '0';
 } /*+(params) || params*1*/
@@ -1786,36 +1762,13 @@ function bin2dec(bin) {
 @
 */
 /*string functions*/
-function left$(text, num) {
-    return text.substring(0, num);
-}
-/*let left$ = (string, num)=>string.substring(0, num); */
-function len$(params) {
-    return params.length;
-}
-/*let len$ = (string)=>string.length;*/
-function mid$(text, start, num) {
-    return text.substring(start, start + num);
-}
-/*let mid$ = (string, start, num) => string.substring(start, start + num);*/
-function right$(text, num) {
-    return text.substring($len(text) - num, $len(text));
-}
-/*let right$ = (string, num) => string.substring(len$(string)-num, len$(string));*/
-function trim$(string) {
-    return string.trim();
-}
-/* var trim$ = (string) => string.trim();*/
-function uppercase(str) {
-    return str !== undefined ? str.toUpperCase() : '';
-}
-/*let uppercase = (string) => string.toUpperCase();*/
-function lowercase(string) {
-    if (string) return string.toLowerCase();
-}
-/*alternative to ES6 arrow functions*/
-/*var tolower = (string) => string.toLowerCase();*/
-
+const left$ = (string, num) => string.substring(0, num); 
+const len$ = (string) => string.length;
+const mid$ = (string, start, num) => string.substring(start, start + num);
+const right$ = (string, num) => string.substring(len$(string)-num, len$(string));
+const trim$ = (string) => string.trim();
+const uppercase = (string) => string.toUpperCase();
+const tolower = (string) => string.toLowerCase();
 /*end of the string functions*/
 
 /*fix the coords in canvas*/
@@ -1854,14 +1807,9 @@ function stopAnimation(requestID) {
     stopAnimationFrame(requestID);
 }
 
-function stop() {
-    stopAnimation(xst.animationID);
-}
-/*const stop = () => stopAnimation(XST.animationID);*/
-function getVersion() {
-    return xst.VERSION;
-}
-/*const getVersion = () => XST.VERSION;*/
+const stop = () => stopAnimation(XST.animationID);
+const getVersion = () => XST.VERSION;
+
 function getOS() {
     if (window.navigator) {
         var Os = navigator.appVersion;
@@ -1886,27 +1834,11 @@ function getTime() {
     return hour + ':' + min + ':' + secs;
 }
 
-/*function getHour() {
-    return new Date().getHours();
-}*/
 const getHour = () => new Date().getHours();
-/*function getMinutes() {
-    return new Date().getMinutes();
-}*/
 const getMinutes = () => new Date().getMinutes();
-/*function getSeconds() {
-    return new Date().getSeconds();
-}*/
 const getSeconds = () => new Date().getSeconds();
-/*function ticks() {
-    return timeStamp();
-}*/
 const ticks = () => timeStamp();
-/*function wait(nsec) {
-    setTimeout(dummy, nsec);
-}*/
 let wait = (nsec) => setTimeout(nsec);
-/*function dummy() {}*/
 const dummy = () => { };
 /*End of time functions*/
 /*
