@@ -1743,27 +1743,11 @@ function randomInt(xmin, xmax) {
     return int(rnd(xmax + 1 - xmin) + xmin);
 }
 
-function min(a, b) {
-    return Math.min(a, b);
-}
-/*const min = (a, b) => (a > b) ? b: a;*/
-function max(a, b) {
-    return Math.max(a, b);
-}
-/*const max = (a, b) => (a > b) ? a: b;*/
-function pow(a, b) {
-    return Math.pow(a, b);
-}
-/*const pow = (a, b)=>Math.pow(a, b);*/
-function degToRad(deg) {
-    deg = deg || 0;
-    return (deg * XST.PI) / 180;
-}
-
-function radToDeg(rad) {
-    rad = rad || 0;
-    return (rad * 180) / XST.PI;
-}
+const min = (a, b) => (a > b) ? b: a;
+const max = (a, b) => (a > b) ? a: b;
+const pow = (a, b) = >Math.pow(a, b);
+const deg2Rad = deg => (XST.PI / 180) * deg;
+const rad2Deg = rad => (180 / XST.PI) * rad;
 
 function decToBin(i) {
     var buf = '';
