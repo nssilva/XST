@@ -1668,40 +1668,16 @@ function distance(x1, y1, x2, y2) {
     return sqrt(dx * dx + dy * dy);
 }
 /*Math functions*/
-function abs(params) {
-    return Math.abs(params);
-}
-
-function floor(params) {
-    return Math.floor(params);
-}
-
-function acos(params) {
-    return Math.acos(params);
-}
-
-function asin(params) {
-    return Math.asin(params);
-}
-
-function atan(params) {
-    return Math.atan(params);
-}
-
-function atan2(par1, par2) {
-    return Math.atan2(par1, par2);
-}
-
+const abs = (val) => Math.abs(val);
+const floor = (val) => Math.floor(val);
+const acos = (val) => Math.acos(val);
+const asin = (val) => Math.asin(val);
+const atan = (val) => Math.atan(val);
+const atan2 = (val1, val2) => Math.atan2(val1, val2); 
 const cos = (param) => Math.cos(param);
 const exp = (param) => Math.exp(param);
 const log = (param) => Math.log(param);
-function rnd(params) {
-    if (params) {
-        return Math.random() * params;
-    }
-    return Math.random();
-}
-
+const rnd = (val) => {if(val) {return Math.random() * val;} return Math.random();} 
 const round = (param) => Math.round(param);
 const sin = (param) => Math.sin(param);
 const sqrt = (param) => Math.sqrt(param);
@@ -1711,17 +1687,11 @@ const int = (param) => round(param);
 function val(params) {
     return params - '0';
 } /*+(params) || params*1*/
-function randomReal(xmin, xmax) {
-    return rnd(xmax - xmin) + xmin;
-}
-
-function randomInt(xmin, xmax) {
-    return int(rnd(xmax + 1 - xmin) + xmin);
-}
-
+const = randomReal => (xmax, xmin) => rnd(xmax - xmin) + xmin;
+const randomInt = (xmin, xmax) => int(rnd((xmax + 1) - xmin) + xmin);
 const min = (a, b) => (a > b) ? b: a;
 const max = (a, b) => (a > b) ? a: b;
-const pow = (a, b) = >Math.pow(a, b);
+const pow = (a, b) => Math.pow(a, b);
 const deg2Rad = deg => (XST.PI / 180) * deg;
 const rad2Deg = rad => (180 / XST.PI) * rad;
 
@@ -1743,14 +1713,14 @@ function decToBin(i) {
     return ret;
 }
 
-function dec2bin(dec) {
+/*function dec2bin(dec) {
     return (dec >>> 0).toString(2);
-}
-/*const dec2bin = (dec) => (dec >> 0).toString(2);*/
-function bin2dec(bin) {
+}*/
+const dec2bin = (dec) => (dec >> 0).toString(2);
+/*function bin2dec(bin) {
     return parseInt(bin, 2).toString(10);
-}
-/*const bin2dec = (bin) => parseInt(bin, 2).toString(10);*/
+}*/
+const bin2dec = (bin) => parseInt(bin, 2).toString(10);
 /*end of math wrapper functions*/
 /*
 @function that accepts a point and calcs the distance between 2 points
