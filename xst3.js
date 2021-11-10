@@ -1993,4 +1993,4 @@ function close() {
     xst = null;
     COLOR = null;
 }
-window.onclose = function() {close();};
+window.onclose = () => close();
